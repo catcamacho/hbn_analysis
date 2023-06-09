@@ -1,5 +1,6 @@
 # hbn_analysis
-This is the analysis workflow for "Evidence for large-scale encoding of contextualized emotion categories that refines across childhood and adolescence", currently under review.
+This is the analysis workflow for:
+Camacho, M.C., Nielsen, A.N., Balser, D. _et al._ Large-scale encoding of emotion concepts becomes increasingly similar between individuals from childhood to adolescence. _Nat Neurosci_ (2023). https://doi.org/10.1038/s41593-023-01358-9
 
 ## Overview
 * 0_process_videos: Automatic feature extraction and processing of manual video codes using the EmoCodes tools
