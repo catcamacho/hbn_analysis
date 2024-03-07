@@ -137,7 +137,7 @@ def denoise_ts(denoise_mat, ts, threshold=threshold):
 
 def bandpass_ts(denoised_ts, lowpass, highpass, TR):
     # load data and preallocate output
-    func_data = nib.load(denoised_ts).get_fdata()
+    func_data = nib.load(denoised_ts).get_fdata().T
     filt_data = np.zeros(func_data.shape)
 
     sampling_rate = 1/TR
@@ -155,7 +155,7 @@ def bandpass_ts(denoised_ts, lowpass, highpass, TR):
     ax2 = nib.load(denoised_ts).header.get_axis(1)
     header = (ax1,ax2)
     # make and save image
-    filt_image = nib.cifti2.cifti2.Cifti2Image(filt_data, header)
+    filt_image = nib.cifti2.cifti2.Cifti2Image(filt_data.T, header)
     filt_image.to_filename(denoised_ts.replace('.32k_fs_LR','_filt.32k_fs_LR'))
     filtered_ts = denoised_ts.replace('.32k_fs_LR','_filt.32k_fs_LR')
     
